@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F4Health - Medical Coding Experts</title>
+    <meta name="description" content="Professional medical coding services with 99.9% accuracy guarantee. HIPAA compliant solutions for healthcare providers.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        :root {
+            --primary-color: #FFD700;
+            --secondary-color: #181818;
+            --accent-color: #FFB300;
+            --text-color: #2D2D2D;
+            --light-bg: #F8F9FA;
+        }
+
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+
+        /* Enhanced Navigation */
+        .header {
+            background: var(--secondary-color);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .logo {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+
+        /* Yellow Theme Hero Section */
+        .hero {
+            background: linear-gradient(rgba(24,24,24,0.9), rgba(24,24,24,0.9)),
+                        url('https://images.unsplash.com/photo-1581595210407-78a4bf4a5c54') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            margin-top: 70px;
+        }
+
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+        }
+
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* Updated CTA Buttons */
+        .cta-button {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+
+        .cta-button:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,179,0,0.3);
+        }
+
+
+        /* Enhanced Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+
+        .service-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            background: rgba(255,215,0,0.1);
+            padding: 1.5rem;
+            border-radius: 50%;
+        }
+
+
+        /* Updated Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--secondary-color);
+            color: white;
+        }
+
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+            }
+
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--secondary-color);
+                width: 100%;
+                height: calc(100vh - 70px);
+                padding: 2rem;
+                transition: right 0.3s;
+            }
+
+
+            .nav-links.active {
+                right: 0;
+            }
+
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">F4Health</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#contact">Contact</a>
+                <a href="#blog">Blog</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1><span>Precision</span> Medical Coding Services</h1>
+            <p>Certified professionals delivering 99.9% coding accuracy with HIPAA-compliant solutions</p>
+            <button class="cta-button">Get Started Today</button>
+        </div>
+    </section>
+
+
+    <!-- Services Section (Same as before with updated styling) -->
+    <!-- Contact Section (Same as before with updated styling) -->
+    <!-- Footer Section (Same as before with updated styling) -->
+
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                navLinks.classList.remove('active');
+            });
+        });
+
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            header.classList.toggle('sticky', window.scrollY > 50);
+        });
+
+
+        // Form Submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add form submission logic
+            this.reset();
+            alert('Thank you for your message! We will respond within 24 hours.');
+        });
+    </script>
+</body>
+</html>
